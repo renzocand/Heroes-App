@@ -63,24 +63,29 @@ export class HeroesService {
     }
   ];
 
-  ArrayHeroes:Heroe[] = []
   constructor() {
   }
 
   getHeroes():Heroe[] {
-    let heroeDB:Heroe;
-
-    this.heroes.forEach((heroe,i)=>{
-      heroeDB = heroe;
-      heroeDB.idx = i
-      this.ArrayHeroes.push(heroeDB)
-    })
-    return this.ArrayHeroes
+    return this.heroes;
   }
 
-  getHeroe(idx: number) {
-    let heroeDB:Heroe = this.ArrayHeroes.find(heroe=>heroe.idx === idx);
-    return heroeDB;
+  getHeroe(idx: number):Heroe {
+    return this.heroes[idx]
+  }
+
+  buscarHeroes(textoI):Heroe[]{
+    let arrayHeroes:Heroe[];
+    textoI = textoI.toLowerCase();
+
+    this.heroes.forEach((heroe, i)=>{
+      let nombreHeroe:string = (heroe.nombre).toLowerCase();
+      if(nombreHeroe.indexOf(textoI)){
+        // arrayHeroes.push(heroe)
+        console.log(heroe);
+      }
+    })
+    return arrayHeroes;
   }
   
 }

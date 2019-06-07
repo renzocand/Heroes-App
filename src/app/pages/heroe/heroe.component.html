@@ -1,1 +1,16 @@
-<h1>Nombre</h1>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6">
+        <h1 class="my-4">{{heroeDB.nombre | uppercase}} (<small>{{heroeDB.aparicion | date:'y'}}</small>)</h1>
+        <p class="lead text-justify">{{heroeDB.bio}}</p>
+        <h1 class="display-1 text-center" *ngIf="heroeDB.casa == 'DC'">DC</h1>
+        <h1 class="display-1" *ngIf="!(heroeDB.casa == 'DC')">Marvel</h1>
+
+    </div>
+    <div class="col-6 text-center">
+        <img [src]="heroeDB.img" class="img img-fluid" alt="">
+        <a class="btn btn-danger my-5" routerLink="/home">Regresar</a>
+        
+    </div>
+  </div>
+</div>

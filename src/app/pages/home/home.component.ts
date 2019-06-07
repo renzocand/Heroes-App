@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.heroes = this._hs.getHeroes();
-    console.log(this.heroes);
   }
 
   irHeroe(idx){

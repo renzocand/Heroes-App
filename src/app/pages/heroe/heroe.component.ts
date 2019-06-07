@@ -10,7 +10,7 @@ import { HeroesService, Heroe } from '../../services/heroes.service';
 export class HeroeComponent implements OnInit {
 
   indice:number;
-  heroeDB: Heroe
+  heroeDB: Heroe;
 
   constructor(private activatedRoute:ActivatedRoute, private _hs:HeroesService) { }
 
@@ -18,7 +18,6 @@ export class HeroeComponent implements OnInit {
     this.activatedRoute.params.subscribe((param:object)=>{
       this.indice = param['id'];
       this.heroeDB = this._hs.getHeroe(this.indice );
-      console.log(this.heroeDB);
     })
   }
 
