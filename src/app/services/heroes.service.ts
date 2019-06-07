@@ -75,14 +75,13 @@ export class HeroesService {
   }
 
   buscarHeroes(textoI):Heroe[]{
-    let arrayHeroes:Heroe[];
+    let arrayHeroes:Heroe[]=[];
     textoI = textoI.toLowerCase();
 
     this.heroes.forEach((heroe, i)=>{
       let nombreHeroe:string = (heroe.nombre).toLowerCase();
-      if(nombreHeroe.indexOf(textoI)){
-        // arrayHeroes.push(heroe)
-        console.log(heroe);
+      if(nombreHeroe.indexOf(textoI)>=0){
+        arrayHeroes.push(heroe)
       }
     })
     return arrayHeroes;
